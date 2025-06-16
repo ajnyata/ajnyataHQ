@@ -4,100 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AjnyataHQ</title>
-  <!-- Playfair Display for that elegant serif look -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet"/>
+  <!-- Monospaced “coded” font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; }
     body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #111;
-      font-family: 'Playfair Display', serif;
-      color: #fff;
-    }
-    .card {
-      position: relative;
-      width: 90%;
-      max-width: 800px;
-      aspect-ratio: 16/9;
       background: #000;
-      border: 2px solid rgba(255,255,255,0.2);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('hmly.jpeg') center/cover no-repeat;
-      filter: brightness(0.6);
-      z-index: 0;
-    }
-    .card-content {
-      position: relative;
-      z-index: 1;
-      height: 100%;
+      color: #fff;
+      font-family: 'Source Code Pro', monospace;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 2rem;
-    }
-    .card-header {
-      text-align: center;
-      flex: 1;
-      display: flex;
-      align-items: center;
       justify-content: center;
-    }
-    .card-header h1 {
-      font-size: clamp(2rem, 5vw, 4rem);
-      letter-spacing: 2px;
-    }
-    .card-footer {
-      font-size: 1rem;
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      opacity: 0.8;
+      text-align: center;
+      padding: 1rem;
     }
-    .card-footer .year {
-      font-style: italic;
-    }
-    .card-footer .apps {
-      text-align: right;
-    }
-    .card-footer .apps span {
+    h1 {
+      font-size: 2.5rem;       /* modest size */
       font-weight: 700;
-      color: #fff;
+      line-height: 1;
     }
-    @media (max-width: 600px) {
-      .card {
-        aspect-ratio: 4/5;
-      }
-      .card-footer {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-      }
+    h2 {
+      font-size: 1.25rem;      /* comfortable thumb-reach */
+      font-weight: 400;
+      opacity: 0.75;
+      margin-top: 0.5rem;
+    }
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="card-content">
-      <div class="card-header">
-        <h1>AjnyataHQ</h1>
-      </div>
-      <div class="card-footer">
-        <div class="year">© 2025 AjnyataHQ</div>
-        <div class="apps">
-          <p><span>CrossPost</span> is our flagship app.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h1>AjnyataHQ</h1>
+  <h2>CrossPost</h2>
+  <footer>© 2025 AjnyataHQ</footer>
 </body>
 </html>
