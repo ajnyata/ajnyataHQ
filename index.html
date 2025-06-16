@@ -2,66 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AjnyataHQ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+  <!-- Playfair Display for that elegant serif look -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet"/>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
     body {
-      margin: 0;
-      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
       font-family: 'Playfair Display', serif;
-      background: url("hmly.jpeg") no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
+      color: #fff;
+    }
+    .card {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      aspect-ratio: 16/9;
+      background: #000;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
       overflow: hidden;
-      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('hmly.jpeg') center/cover no-repeat;
+      filter: brightness(0.6);
+      z-index: 0;
+    }
+    .card-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem;
+    }
+    .card-header {
+      text-align: center;
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
-    .glass {
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 90%;
-      width: 480px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    .card-header h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: 2px;
     }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #dddddd;
-    }
-
-    .app-list {
-      margin-top: 1.5rem;
+    .card-footer {
       font-size: 1rem;
-      font-weight: 400;
-      color: #bbbbbb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0.8;
     }
-
-    .app-list span {
-      font-weight: 600;
-      color: #ffffff;
+    .card-footer .year {
+      font-style: italic;
+    }
+    .card-footer .apps {
+      text-align: right;
+    }
+    .card-footer .apps span {
+      font-weight: 700;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .card {
+        aspect-ratio: 4/5;
+      }
+      .card-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="glass">
-    <h1>AjnyataHQ</h1>
-    <h2>Minimal tools. Infinite reach.</h2>
-    <div class="app-list">
-      <p><span>CrossPost</span> is one of our crafted experiences.</p>
-      <p>More powerful tools coming soon.</p>
+  <div class="card">
+    <div class="card-content">
+      <div class="card-header">
+        <h1>AjnyataHQ</h1>
+      </div>
+      <div class="card-footer">
+        <div class="year">© 2025 AjnyataHQ</div>
+        <div class="apps">
+          <p><span>CrossPost</span> is our flagship app.</p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
